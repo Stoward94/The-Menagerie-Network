@@ -2,29 +2,29 @@
   {
     "Name":"Blackpool Zoo",
     "Link":"http://www.blackpoolzoo.org.uk/",
-    "lat":53.81625,
-    "long":-3.011161,
+    "latitude":53.81625,
+    "longtitude":-3.011161,
     "postcode":"FY3 8PP"
   },
   {
     "Name":"Edinburgh Zoo",
     "Link":"http://www.edinburghzoo.org.uk/",
-    "lat":-3.269331,
-    "long":-0.29962,
+    "latitude":-3.269331,
+    "longtitude":-0.29962,
     "postcode":"EH12 6TS"
   },
   {
     "Name":"Kingston Zoo",
     "Link":"http://www.kingston.ac.uk/",
-    "lat":51.40298,
-    "long":-0.30311,
+    "latitude":51.40298,
+    "longtitude":-0.30311,
     "postcode":"KT1 2EE"
   },
   {
     "Name":"Welsh Mountain Zoo",
     "Link":"http://www.welshmountainzoo.org/",
-    "lat":53.293116,
-    "long":-3.746532,
+    "latitude":53.293116,
+    "longtitude":-3.746532,
     "postcode":"LL28 5UY"
   }
 ]
