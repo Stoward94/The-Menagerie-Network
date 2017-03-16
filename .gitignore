@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/netbeans
 ### NetBeans ###
 nbproject/private/
@@ -8,3 +9,26 @@ nbdist/
 .nb-gradle/
 # End of https://www.gitignore.io/api/netbeans
 /server/MenagerieNetwork/target/
+=======
+# Created by https://www.gitignore.io/api/maven
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Exclude maven wrapper
+!/.mvn/wrapper/maven-wrapper.jar
+
+# End of https://www.gitignore.io/api/maven
+
+### npm ###
+# Dependency directories
+node_modules/
+>>>>>>> origin/master
