@@ -29,11 +29,11 @@ export const ZooSection = React.createClass({
     render() {
       return (
               <div>
-                  <div className="container marginbot-50">
+                  <div className="container mar-b-40">
                       <div className="row">
                           <div className="col-lg-8 col-lg-offset-2">
                               <div className="wow lightSpeedIn" data-wow-delay="0.1s">
-                                  <div className="section-heading text-center">
+                                  <div className="sec-heading text-center">
                                       <h2 className="h-bold">Explore The Menagerie Network</h2>
                                       <p>Discovery and meet all of the spectacular animals throughout our network</p>
                                   </div>
@@ -47,7 +47,7 @@ export const ZooSection = React.createClass({
                       <div className="row">
 
                           {this.state.zoos.map((zoo, index) =>
-                            <div className="col-md-3">
+                            <div className="col-md-4">
                               <ZooBlock key={index}
                                         {...zoo}/>
                             </div>
