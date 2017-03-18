@@ -37,8 +37,8 @@
                     <li class="active"><a href="#intro">Home</a></li>
                     <li><a href="#zoos-section">Zoos</a></li>
                     <li><a href="#animals-section">Animals</a></li>
-                    <li><a href="#facilities">Facilities</a></li>
-                    <li><a href="#pricing">Directions</a></li>
+                    <li><a href="#">Facilities</a></li>
+                    <li><a href="#directions-section">Directions</a></li>
                 </ul>
             </div>
         </div>
@@ -93,7 +93,10 @@
                     <div class="wow fadeInUp" data-wow-delay="0.2s">
                         <div class="text-center">
                             <h1 class="num-circle-green">1</h1>
-                            <h4 class="h-bold">Book your tickets</h4>
+                            <h4 class="h-bold">
+                              <img src="http://www.bristolzoo.org.uk/addons/shared_addons/themes/bristolzoo/img/tickets.png" width="32px" style="margin:0 5px 0 -15px;"/>
+                              Book your tickets
+                            </h4>
                             <p>
                                 As a non-profit organisation, including a voluntary 10% donation in your ticket purchase makes a big difference and helps us continue our vital conservation work around the world.
                             </p>
@@ -160,7 +163,32 @@
     <!-- Section: Animals (React Component)-->
     <section id="animals-section" class="bg-gray pad-t-120 pad-b-120"></section>
 
+    <!-- Section: Directions (React Component)-->
+    <section id="directions-section" class="pad-t-120">
 
+    </section>
+
+    <div class="container pad-b-120">
+
+        <div id="map" style="height:450px; width:100%;"></div>
+
+
+        <div class="map-search form-inline">
+            <div class="text-center">
+                <h4 class="h-xlight" style="margin-bottom: 5px;">Want directions? No problem...</h4>
+            </div>
+            <img src="./media/icons/icon-directions.png" alt="directions-icon" width="64">
+            <div class="form-group" style="width:40%; margin-right: 20px;">
+                <input id="origin-input" class="form-control" type="text" placeholder="Enter a start location">
+            </div>
+            <div class="form-group" style="width:40%">
+                <select id="destination-select" class="form-control">
+                    <option selected disabled>-- Select the zoo you would like to visit --</option>
+                  </select>
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- Core JavaScript Files -->
@@ -176,6 +204,8 @@
     <script src="js/nivo-lightbox.min.js"></script>
     <script src="js/custom.js"></script> -->
     <script type="text/javascript" src="assets/bundle.js"></script>
+    <script type="text/javascript" src="js/google-maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD23zmMF0pgl2yyGAo0OLuJjJvzjSMBwNc&libraries=places&callback=initMap"></script>
 </body>
 
 </html>

@@ -244,6 +244,9 @@ h1.font-light, h2.font-light, h3.font-light, h4.font-light, h5.font-light, h6.fo
 .mar-t-60{
   margin-top: 60px;
 }
+.mar-b-20{
+  margin-bottom: 20px;
+}
 .mar-b-40{
   margin-bottom: 40px;
 }
@@ -507,4 +510,18 @@ p.lead-footer {
 
 .num-circle-orange{
   background-color: #ffc800;
+}
+
+/********************
+--- Map Search  ---
+********************/
+.map-search{
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+}
+
+.map-search input, .map-search select{
+  height: 40px;
+  width: 100%!important;
 }
