@@ -1,0 +1,73 @@
+.tiny-text{
+	font-size: 0.8em;
+	color: grey;
+}
+
+.animal-search{
+    border-radius: 30px;
+    height: 42px;
+    font-size: 1.1em;
+    padding: 22px;
+}
+
+.ani-block{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.ani-block-h{
+	font-size: 1.4em;
+	font-weight: 700;
+	padding: 10px;
+	background-color: #65b037;
+	color: #fff;
+}
+
+.ani-block-body{
+	padding: 10px;
+	background-color: #fff;
+	font-size: 0.95em;
+}
+
+.ani-details{
+	background-color: #fff;
+	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
+}
+.ani-details h2{
+	margin: 0;
+	padding: 10px 0;
+}
+.ani-details img{
+	width: 100%;
+}
+
+.ani-location{
+	text-align: center;
+	background-color: lightgreen;
+}
+
+.ani-location h2{
+	color: #FFF;
+  font-size: 1.4em;
+  margin-bottom: 0;
+  padding: 25px 0;
+	background-color: #65b037;
+	text-transform: capitalize;
+}
+
+.ani-location ul{
+	list-style: none;
+  margin: 0;
+	padding: 0;
+	padding-top: 25px;
+  font-size: 1.4em;
+}
+.ani-location ul li{
+		display: inline;
+    color: #fff;
+		font-weight: 400;
+}
+.ani-location ul li + li:before{
+		content: " | "
+}

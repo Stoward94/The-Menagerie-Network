@@ -19,7 +19,7 @@ export const ZooBlock = (props) => (
                 <span>
                     <i className="fa fa-map-marker"></i>
                 </span>
-                <span style={{"padding-left":"10px" }}>
+                <span style={{paddingLeft:"10px" }}>
                     <b>Visit</b>
                 </span>
                 <span className="loc-block-arrow">

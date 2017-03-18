@@ -1,0 +1,86 @@
+[
+  {
+    "Id":1,
+    "CommonName":"Royal Python",
+    "LatinName":"Python Regius",
+    "Order":"Squamata",
+    "Family":"Pythonidae",
+    "Genus":"Python",
+    "Species":"regius",
+    "ImageUrl":"./media/animals/royal-python.jpg",
+    "Description":"The royal python, also known as the ball python, is a python species found in sub-Saharan Africa. Like all other pythons, it is a non-venomous constrictor. This is the smallest of the African pythons and is popular in the pet trade, largely due to its small size and typically docile temperament",
+    "Zoo": ["Blackpool Zoo", "Edinburgh Zoo", "Kingston Zoo"]
+  },
+  {
+    "Id":2,
+    "CommonName":"Chimpanzee",
+    "LatinName":"Pan Troglodytes",
+    "Order":"Primates",
+    "Family":"Hominidae",
+    "Genus":"Pan",
+    "Species":"Troglodytes",
+    "ImageUrl":"./media/animals/chimpanzee.jpg",
+    "Description":"The Chimpanzee is a species of ape that is natively found in a variety of different habitats in western and central Africa. Closely related to other great apes including Orang-Utans and Gorillas, the Chimpanzee is also very closely related to Humans as we share 98% of the same DNA. They are thought to be the most intelligent animals on the planet after people and are not only known to show emotion but they are also great problem-solvers. There are two different species of Chimpanzee which are the Common Chimpanzee and the smaller Bonobo (also known as the Pygmy Chimpanzee) which has a limited distribution south of the Congo River.",
+    "Zoo": ["Blackpool Zoo", "Kingston Zoo"]
+  },
+  {
+    "Id":3,
+    "CommonName":"African Lion",
+    "LatinName":"Panthera Leo",
+    "Order":"Carnivora",
+    "Family":"Felidae",
+    "Genus":"Panthera",
+    "Species":"Leo",
+    "ImageUrl":"./media/animals/african-lion.jpg",
+    "Description":"The Lion is one of the largest, strongest and most powerful felines in the world second only in size to the Siberian Tiger. They are the largest cats on the African continent and are unique among felines in a number of ways but the biggest difference between Lions and other cats is that they are incredibly sociable animals that live together in family groups known as prides. Lions are also part of the big cat family meaning that both males and females are able to roar. Despite having once roamed across much of Africa and even parts of Europe and Asia, the world's remaining Lion population now resides in sub-Saharan Africa.",
+    "Zoo":["Blackpool Zoo"]
+  },
+  {
+    "Id":4,
+    "CommonName":"Bengal Tiger",
+    "LatinName":"Panthera Tigris Tigris",
+    "Order":"Carnivora",
+    "Family":"Felidae",
+    "Genus":"Panthera",
+    "Species":"Tigris",
+    "ImageUrl":"./media/animals/bengal-tiger.jpg",
+    "Description":"The Bengal tiger (also known as the Royal Bengal tiger) is a subspecies of tiger, found across the Indian subcontinent. The Bengal tiger is the national animal of Bangladesh and is considered to be the second largest tiger in the world. The Bengal tiger is the most numerous species of tiger in Asia and is found in dense forests and mangrove swamps and jungles throughout India, Bangladesh, Bhutan and Nepal, although the Bengal tiger's range today is much smaller than it once was.",
+    "Zoo":["Edinburgh Zoo"]
+  },
+  {
+    "Id":5,
+    "CommonName":"Emperor Penguin",
+    "LatinName":"Aptenodytes Forsteri",
+    "Order":"Sphenisciformes",
+    "Family":"Spheniscidae",
+    "Genus":"Aptenodytes",
+    "Species":"Forsteri",
+    "ImageUrl":"./media/animals/emperor-penguin.jpg",
+    "Description": "The Emperor Penguin is found on and around the Antarctic continent and is not just the largest species of penguin in the world but also one of the most unique. Instead of breeding in the warmer summer months like other penguin species, Emperor Penguins lay and incubate their eggs during the coldest time of year in the coldest place on Earth. Emperor Penguins are flightless birds that have small, stiff wings that help them to fly through the water, rather than through the air. Despite having been first recorded by Captain Cook on his second voyage in the late 1700s, the first Emperor Penguin colony wasn't discovered until 1902 with their extreme southerly-dwelling nature leading to new colonies still being recorded as late as 1986.",
+    "Zoo":["Edinburgh Zoo"]
+  },
+  {
+    "Id":6,
+    "CommonName":"Bonobo",
+    "LatinName":"Pan Paniscus",
+    "Order":"Primates",
+    "Family":"Hominidae",
+    "Genus":"Pan",
+    "Species":"Paniscus",
+    "ImageUrl":"./media/animals/bonobo.jpg",
+    "Description":"The bonobo is a large species of primate that is only found in the Democratic Republic Of The Congo in central Africa. The bonobo is also known as the pygmy chimpanzee and the dwarf chimpanzee as the bonobo is thought to be very closely related to the chimpanzee and the two species share very similar characteristics. The bonobo is thought to have evolved from the ancestors of the common chimpanzee millions of years ago when the Congo River was formed. Today, the bonobo lives south of the Congo river and chimpanzees live north of the river meaning that they have evolved as two separate species.",
+    "Zoo":["Kingston Zoo"]
+  },
+  {
+    "Id":7,
+    "CommonName":"Chinese Box Turtle",
+    "LatinName":"Cuora Flavomarginata",
+    "Order":"Testudines",
+    "Family":"Geoemydidae",
+    "Genus":"Cuora",
+    "Species":"Flavomarginata",
+    "ImageUrl":"./media/animals/chinese-box-turtle.jpg",
+    "Description":"These inquisitive little chelonians, also called snake eating turtles, Yellow Margined box turtles, and Golden-headed box turtles.  These turtles are native to the sub-tropical and temperate climates of China , Taiwan , and Japan and have a unique hinge on their plastron that allows box turtles to withdraw their arms, legs, and head fully into their shells and seal up like a box. These animals can stay in this position for hours. These turtles reach a shell size of 5-12 inches long.",
+    "Zoo":["Welsh Mountain Zoo"]
+  }
+]
