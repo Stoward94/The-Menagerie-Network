@@ -31,7 +31,7 @@ export const AnimalBlocks = () => (
     {blockDefaults.map((animal, index) =>
 
       <div className="col-md-3" key={index}>
-          <div className="ani-block">
+          <div className="ani-block wow fadeInUp" data-wow-delay="0.1s">
               <a href="#">
                   <div className="ani-block-header-img">
                       <img className="img-responsive" src={animal.imageUrl}/>

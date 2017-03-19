@@ -72,50 +72,57 @@ export class AnimalDetails extends React.Component {
 
     renderContent(){
       return (
-        <div className="ani-details">
-            <div>
-              <div className="row">
-                <div className="col-md-4">
-                  <img src={this.state.animal.imageUrl} className="img-responsive"/>
-                </div>
-
-                <div className="col-md-8" style={{paddingLeft:"0px"}}>
-                  <h2 className="h-medium">{this.state.animal.commonName} <small>"{this.state.animal.latinName}"</small>
-                    <span className="pull-right" style={{fontSize: "0.4em", paddingRight:"15px"}}>
-                      <img src="./media/icons/globe.png" style={{height:"32px", width:"32px", marginRight:"5px"}}/> Origin: {this.state.animal.origin}
-                    </span>
-                  </h2>
-                  <p style={{paddingRight:"5px"}}>
-                    <b>Order:</b> {this.state.animal.order} |
-                    <b> Family:</b> {this.state.animal.family} |
-                    <b> Genus:</b> {this.state.animal.genus} |
-                    <b> Species:</b> {this.state.animal.species}
-                    <br/>
-                  </p>
-                  <p>{this.state.animal.description}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="ani-location">
-    					<div className="wow bounceInUp" data-wow-delay="0.3s">
-      					<div className="row">
+        <div>
+            <div className="ani-details wow bounceInLeft">
+                <div className="row">
                   <div className="col-md-4">
-                    <h2><i className="fa fa-globe" aria-hidden="true"></i> Come and Visit Me</h2>
-                  </div>
-                  <div className="col-md-8">
-                    <ul>
-                      {this.state.animal.zoo.map((zoo, index) =>
-                        <li key={index}>{zoo}</li>
-                      )}
-                    </ul>
+                    <img src={this.state.animal.imageUrl} className="img-responsive"/>
                   </div>
 
+                  <div className="col-md-8" style={{paddingLeft:"0px"}}>
+                    <h2 className="h-medium">{this.state.animal.commonName} <small>"{this.state.animal.latinName}"</small>
+                      <span className="pull-right wow bounceInLeft" style={{fontSize: "0.4em", paddingRight:"15px"}}>
+                        <img src="./media/icons/globe.png" style={{height:"32px", width:"32px", marginRight:"5px"}}/> Origin: {this.state.animal.origin}
+                      </span>
+                    </h2>
+                    <p style={{paddingRight:"5px"}}>
+                      <span>
+                        <b>Order:</b> {this.state.animal.order} |
+                      </span>
+                      <span>
+                        <b>Family:</b> {this.state.animal.family} |
+                      </span>
+                      <span>
+                        <b>Genus:</b> {this.state.animal.genus} |
+                      </span>
+                      <span>
+                        <b>Species:</b> {this.state.animal.species}
+                      </span>
+                    </p>
+                    <p>{this.state.animal.description}</p>
+                  </div>
+                </div>
 
-      					</div>
-    					</div>
-	          </div>
+                <div className="ani-location">
+        					<div>
+          					<div className="row">
+                      <div className="col-md-4">
+                        <h2><i className="fa fa-globe" aria-hidden="true"></i> Come and Visit Me</h2>
+                      </div>
+                      <div className="col-md-8">
+                        <ul>
+                          {this.state.animal.zoo.map((zoo, index) =>
+                            <li key={index}>{zoo}</li>
+                          )}
+                        </ul>
+                      </div>
 
+
+          					</div>
+        					</div>
+    	          </div>
+
+            </div>
         </div>
       );
     }

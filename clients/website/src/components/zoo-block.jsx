@@ -5,7 +5,7 @@ import './css/zoo-block.css'
 //Used as sub component to render a zoo location block
 export const ZooBlock = (props) => (
 
-    <div className="loc-block">
+    <div className="loc-block wow fadeInUp" data-wow-delay="0.1s">
         <div className="loc-block-header-img">
             <img className="img-responsive" src={props.image}/>
         </div>

@@ -46,7 +46,7 @@ export const ZooSection = React.createClass({
                   <div className="container">
                       <div className="row">
 
-                          {this.state.zoos.map((zoo, index) =>
+                          {this.state.zoos.map((zoo, index) =>                            
                             <div className="col-md-4" key={index}>
                               <ZooBlock {...zoo}/>
                             </div>
