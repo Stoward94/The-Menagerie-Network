@@ -114,7 +114,16 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
     this.directionsService.route(directionsRequest, function(response, status) {
         if (status === 'OK') {
+
             me.directionsDisplay.setDirections(response);
+
+            //update summary panel
+            var route = response.routes[0];
+            document.getElementById('route-notes').innerHTML = "via " + route.summary
+            document.getElementById('route-distance').innerHTML = route.legs[0].distance.text
+            document.getElementById('route-time').innerHTML = route.legs[0].duration.text
+            document.getElementById('directions-info-panel').style.visibility = 'visible';
+
         } else {
             //window.alert('Directions request failed due to ' + status);
         }

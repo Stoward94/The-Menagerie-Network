@@ -168,9 +168,22 @@
 
     </section>
 
-    <div class="container pad-b-120">
+    <div class="container pad-b-120" style="position:relative">
 
-        <div id="map" style="height:450px; width:100%;"></div>
+        <div id="map"></div>
+
+        <div id="directions-info-panel" style="visibility:hidden">
+            <div style="background-color:white; position: relative">
+                <i class="fa fa-car" style="position: absolute; padding: 10px;" aria-hidden="true"></i>
+                <div style="margin-left: 40px;">
+                    <span id="route-notes"></span>
+                    <br/>
+                    <small><b id="route-time" style="color: #7db53b;"></b></small>
+                    <br/>
+                    <small id="route-distance"></small>
+                </div>
+            </div>
+        </div>
 
 
         <div class="map-search form-inline">
