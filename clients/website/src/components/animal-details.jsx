@@ -30,6 +30,7 @@ export class AnimalDetails extends React.Component {
             genus: animal.Genus,
             order: animal.Order,
             species: animal.Species,
+            origin: animal.Origin,
             imageUrl: animal.ImageUrl,
             description: animal.Description,
             zoo: animal.Zoo
@@ -79,7 +80,11 @@ export class AnimalDetails extends React.Component {
                 </div>
 
                 <div className="col-md-8" style={{paddingLeft:"0px"}}>
-                  <h2 className="h-medium">{this.state.animal.commonName} <small>"{this.state.animal.latinName}"</small></h2>
+                  <h2 className="h-medium">{this.state.animal.commonName} <small>"{this.state.animal.latinName}"</small>
+                    <span className="pull-right" style={{fontSize: "0.4em", paddingRight:"15px"}}>
+                      <img src="./media/icons/globe.png" style={{height:"32px", width:"32px", marginRight:"5px"}}/> Origin: {this.state.animal.origin}
+                    </span>
+                  </h2>
                   <p style={{paddingRight:"5px"}}>
                     <b>Order:</b> {this.state.animal.order} |
                     <b> Family:</b> {this.state.animal.family} |
