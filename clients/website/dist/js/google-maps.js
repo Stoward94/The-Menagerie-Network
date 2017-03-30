@@ -1,3 +1,5 @@
+'use strict';
+
 function initMap() {
 
     $.get('./zoos.json', (result) => {
@@ -34,6 +36,7 @@ function initMap() {
             var contentString =
                 '<div id="content"><b>' + zoo.name + '</b>' +
                 '<div id="bodyContent">' +
+				'<span>Open hours: 09:30 - 17:30</span><br/>' +
                 '<a href="' + zoo.link + '">' + zoo.link + '</a> ' +
                 '</div></div>';
 
@@ -46,7 +49,7 @@ function initMap() {
             marker.addListener('click', function() {
                 //First close all windows
                 infoWindows.map((w, i) => {
-                    w.close()
+                    w.close();
                 });
                 infowindow.open(map, marker);
             });
@@ -78,8 +81,8 @@ var AutocompleteDirectionsHandler = function(map) {
     destinationInput.addEventListener("change", () => {
       this.destination = destinationInput.value;
       this.route();
-    })
-}
+    });
+};
 
 AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete) {
     var me = this;
@@ -110,7 +113,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
       origin: { 'placeId': this.originPlaceId },
       destination: this.destination,
       travelMode: this.travelMode
-    }
+    };
 
     this.directionsService.route(directionsRequest, function(response, status) {
         if (status === 'OK') {
@@ -119,9 +122,9 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
             //update summary panel
             var route = response.routes[0];
-            document.getElementById('route-notes').innerHTML = "via " + route.summary
-            document.getElementById('route-distance').innerHTML = route.legs[0].distance.text
-            document.getElementById('route-time').innerHTML = route.legs[0].duration.text
+            document.getElementById('route-notes').innerHTML = "via " + route.summary;
+            document.getElementById('route-distance').innerHTML = route.legs[0].distance.text;
+            document.getElementById('route-time').innerHTML = route.legs[0].duration.text;
             document.getElementById('directions-info-panel').style.visibility = 'visible';
 
         } else {

@@ -1,55 +1,55 @@
 [
   {
     "name":"Blackpool Zoo",
-    "Link":"http://www.blackpoolzoo.org.uk/",
-    "lat":53.81625,
-    "long":-3.011161,
+    "link":"http://www.blackpoolzoo.org.uk/",
+    "lat":53.816246,
+    "long":-3.011160,
     "postcode":"FY3 8PP",
     "image":"./media/zoos/zoo-1.jpg",
     "description": "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."
   },
   {
     "name":"Edinburgh Zoo",
-    "Link":"http://www.edinburghzoo.org.uk/",
-    "lat":-3.269331,
-    "long":-0.29962,
+    "link":"http://www.edinburghzoo.org.uk/",
+    "lat":-55.942175,
+    "long":-3.269330,
     "postcode":"EH12 6TS",
     "image":"./media/zoos/zoo-2.jpg",
     "description": "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."
   },
   {
     "name":"Kingston Zoo",
-    "Link":"http://www.kingston.ac.uk/",
-    "lat":51.40298,
-    "long":-0.30311,
+    "link":"http://www.kingston.ac.uk/",
+    "lat":51.403603,
+    "long":-0.303575,
     "postcode":"KT1 2EE",
     "image":"./media/zoos/zoo-3.jpg",
     "description": "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."
   },
   {
     "name":"Welsh Mountain Zoo",
-    "Link":"http://www.welshmountainzoo.org/",
-    "lat":53.293116,
-    "long":-3.746532,
+    "link":"http://www.welshmountainzoo.org/",
+    "lat":53.293110,
+    "long":-3.746531,
     "postcode":"LL28 5UY",
     "image":"./media/zoos/zoo-4.jpg",
     "description": "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."
   },
   {
     "name":"Bristol Zoo",
-    "Link":"http://www.blackpoolzoo.org.uk/",
-    "lat":53.81625,
-    "long":-3.011161,
-    "postcode":"FY3 8PP",
+    "link":"http://www.bristolzoo.org.uk",
+    "lat":51.463763,
+    "long":-2.622540,
+    "postcode":"BS8 3HA",
     "image":"./media/zoos/zoo-5.jpg",
     "description": "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."
   },
   {
-    "name":"Cardiff Zoo",
-    "Link":"http://www.blackpoolzoo.org.uk/",
-    "lat":53.81625,
-    "long":-3.011161,
-    "postcode":"FY3 8PP",
+    "name":"Paignton Zoo",
+    "link":"http://www.paigntonzoo.org.uk/",
+    "lat":50.428828,
+    "long":-3.584027,
+    "postcode":"TQ4 7EU",
     "image":"./media/zoos/zoo-6.jpg",
     "description": "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."
   }
