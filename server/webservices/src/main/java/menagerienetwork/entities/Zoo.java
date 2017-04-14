@@ -83,6 +83,10 @@ public class Zoo implements Serializable {
     private Collection<ZooAnimal> zooAnimalCollection;
 
     public Zoo() {}
+    
+    public Zoo(Integer id) {
+        this.id = id;
+    }
 
     public Zoo(Integer id, String name, String siteUrl, BigDecimal latitude, BigDecimal longitude, String postcode, String thumbnailUrl, String summary) {
         this.id = id;

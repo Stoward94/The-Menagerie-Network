@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "ZooAnimal.findAll", query = "SELECT z FROM ZooAnimal z")
     , @NamedQuery(name = "ZooAnimal.findById", query = "SELECT z FROM ZooAnimal z WHERE z.id = :id")
-    , @NamedQuery(name = "ZooAnimal.findByPetName", query = "SELECT z FROM ZooAnimal z WHERE z.petName = :petName")})
+    , @NamedQuery(name = "ZooAnimal.findByPetName", query = "SELECT z FROM ZooAnimal z WHERE z.petName = :petName")
+    , @NamedQuery(name = "ZooAnimal.findByZoo", query = "SELECT z FROM ZooAnimal z WHERE z.zooId = :id")})
 public class ZooAnimal implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,7 +52,7 @@ public class ZooAnimal implements Serializable {
     
     @JoinColumn(name = "animal_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Animal animalId;
+    private Animal species;
     
     @JoinColumn(name = "zoo_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
@@ -98,12 +99,12 @@ public class ZooAnimal implements Serializable {
         this.male = male;
     }
 
-    public Animal getAnimalId() {
-        return animalId;
+    public Animal getSpecies() {
+        return species;
     }
 
-    public void setAnimalId(Animal animalId) {
-        this.animalId = animalId;
+    public void setSpecies(Animal animalId) {
+        this.species = animalId;
     }
 
     public Zoo getZooId() {

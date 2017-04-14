@@ -18,8 +18,7 @@ public class ApplicationConfig extends Application {
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(menagerienetwork.webservices.AnimalService.class);
-        resources.add(menagerienetwork.webservices.ZooAnimalFacadeREST.class);
-        resources.add(menagerienetwork.webservices.ZooFacadeREST.class);
+        resources.add(menagerienetwork.webservices.ZooService.class);
     }
     
 }
