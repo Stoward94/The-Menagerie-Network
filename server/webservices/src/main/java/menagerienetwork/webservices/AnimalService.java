@@ -1,14 +1,11 @@
 package menagerienetwork.webservices;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -59,13 +56,24 @@ public class AnimalService {
     @GET
     @Path("/search/{q}/")
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<Animal> find(@PathParam("q") String q) {
+    public Collection<AnimalSearchResult> find(@PathParam("q") String q) {
         
         AnimalRepository repo = new AnimalRepository(em);
-        Collection<Animal> animal = repo.getByCommonScientificName(q);
+        Collection<Animal> animals = repo.getByCommonScientificName(q);
         
-        //TODO: Return search result array (id, name, latin)
+        //Convert to smaller class
+        ArrayList<AnimalSearchResult> results =
+                new ArrayList(animals.size());
         
-        return animal;
+        for(Animal a : animals){
+            AnimalSearchResult r = new AnimalSearchResult();
+            r.setId(a.getId());
+            r.setCommonName(a.getCommonName());
+            r.setScientificName(a.getScientificName());
+            
+            results.add(r);
+        }
+        
+        return results;
     }   
 }
