@@ -86,7 +86,11 @@ public class Animal implements Serializable {
     private String description;
     
     
-    public Animal() {}    
+    public Animal() {} 
+    
+    public Animal(Integer id) {
+        this.id = id;
+    } 
 
     public Animal(Integer id, String commonName, String scientificName, String order, String family, String genus, String species, String description) {
         this.id = id;
@@ -178,5 +182,23 @@ public class Animal implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Validates the class instance ensuring all data necessary 
+     * for persistence is present.
+     * @return Whether the entity is valid
+     */
+    public boolean isValid() {
+        
+        boolean valid = !commonName.isEmpty();
+        valid = valid && !scientificName.isEmpty();
+        valid = valid && !order.isEmpty();
+        valid = valid && !family.isEmpty();
+        valid = valid && !genus.isEmpty();
+        valid = valid && !species.isEmpty();
+        valid = valid && !description.isEmpty();
+        
+        return valid;
     }
 }

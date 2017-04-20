@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ZooAnimal.findAll", query = "SELECT z FROM ZooAnimal z")
     , @NamedQuery(name = "ZooAnimal.findById", query = "SELECT z FROM ZooAnimal z WHERE z.id = :id")
     , @NamedQuery(name = "ZooAnimal.findByPetName", query = "SELECT z FROM ZooAnimal z WHERE z.petName = :petName")
-    , @NamedQuery(name = "ZooAnimal.findByZoo", query = "SELECT z FROM ZooAnimal z WHERE z.zooId = :id")})
+    , @NamedQuery(name = "ZooAnimal.findByZoo", query = "SELECT z FROM ZooAnimal z WHERE z.zoo = :id")})
 public class ZooAnimal implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class ZooAnimal implements Serializable {
     
     @JoinColumn(name = "zoo_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Zoo zooId;
+    private Zoo zoo;
 
     public ZooAnimal() {}
 
@@ -64,6 +64,16 @@ public class ZooAnimal implements Serializable {
         this.id = id;
         this.petName = petName;
         this.male = male;
+    }
+    
+    public ZooAnimal(Integer id, String petName, boolean male
+            , Integer ageMonths, Animal species, Zoo zoo) {
+        this.id = id;
+        this.petName = petName;
+        this.male = male;
+        this.ageMonths = ageMonths;
+        this.species = species;
+        this.zoo = zoo;
     }
 
     //Getters & Setters
@@ -103,15 +113,29 @@ public class ZooAnimal implements Serializable {
         return species;
     }
 
-    public void setSpecies(Animal animalId) {
-        this.species = animalId;
+    public void setSpecies(Animal animal) {
+        this.species = animal;
     }
 
-    public Zoo getZooId() {
-        return zooId;
+    public Zoo getZoo() {
+        return zoo;
     }
 
-    public void setZooId(Zoo zooId) {
-        this.zooId = zooId;
+    public void setZoo(Zoo zoo) {
+        this.zoo = zoo;
     }    
+
+    /**
+     * Validates the class instance ensuring all data necessary 
+     * for persistence is present.
+     * @return Whether the entity is valid
+     */
+    public boolean isValid() {
+        
+        boolean valid = petName.isEmpty();
+        valid = valid && species.getId() != null;
+        valid = valid && zoo.getId() != null;
+        
+        return valid;
+    }
 }

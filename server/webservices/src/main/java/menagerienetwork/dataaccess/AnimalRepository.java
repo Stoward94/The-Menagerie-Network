@@ -3,9 +3,12 @@ package menagerienetwork.dataaccess;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceException;
+import javax.validation.ConstraintViolationException;
 import menagerienetwork.entities.Animal;
 
-public class AnimalRepository implements ReadRepository<Animal> {    
+public class AnimalRepository implements ReadRepository<Animal>
+                                        ,InsertRepository<Animal>{    
   
     private final EntityManager em;
     
@@ -45,5 +48,37 @@ public class AnimalRepository implements ReadRepository<Animal> {
     public Collection<Animal> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    /**
+     * Register a new species of animal to the menagerie network
+     * @param entity
+     */
+    public void registerSpecies(Animal entity) {
+        
+        //Perform some logic, or entity validation
+        //Make sure the id value is null, preventing manual input
+        entity.setId(null);
+        
+        //Pass to the insert method
+        insert(entity);
+    }
+
+    @Override
+    public void insert(Animal entity) {
+        try{
+            em.persist(entity);
+        }        
+        catch(PersistenceException ex){
+            //TODO: Log error
+            throw ex;
+        }
+        catch(ConstraintViolationException ex){
+            //TODO: Log error
+            throw ex;
+        }
+        catch(Exception ex){
+            //TODO: Log error
+            throw ex;
+        }
+    }    
 }

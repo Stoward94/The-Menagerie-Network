@@ -79,7 +79,7 @@ public class Zoo implements Serializable {
     @Column(name = "summary")
     private String summary;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "zooId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "zoo")
     private Collection<ZooAnimal> zooAnimalCollection;
 
     public Zoo() {}
