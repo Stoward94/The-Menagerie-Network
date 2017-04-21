@@ -44,6 +44,9 @@ public class AnimalService {
         repo = new AnimalRepository(em);
         Animal animal = repo.getById(id);
         
+        if(animal == null)
+            webExceptionHandler("Not found", 404);
+        
         return animal;
     }
     
@@ -145,6 +148,8 @@ public class AnimalService {
         
         switch(statusCode){
             case 400: status = Response.Status.BAD_REQUEST;
+                break;
+            case 404: status = Response.Status.NOT_FOUND;
                 break;
             case 409: status = Response.Status.CONFLICT;
                 break;

@@ -3,6 +3,7 @@ package menagerienetwork.dataaccess;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import javax.validation.ConstraintViolationException;
 import menagerienetwork.entities.Animal;
@@ -18,12 +19,18 @@ public class AnimalRepository implements ReadRepository<Animal>
 
     @Override
     public Animal getById(Object id) {
-        
-        Animal animal = em.createNamedQuery("Animal.findById", Animal.class)
+        try{
+            Animal animal = em.createNamedQuery("Animal.findById", Animal.class)
                 .setParameter("id", (int)id)
                 .getSingleResult();
         
-        return animal;
+            return animal;
+        }
+        catch(NoResultException ex){
+            //No result found, log error...
+            return null;
+        }
+        
     }
     
     /**
