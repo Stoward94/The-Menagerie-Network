@@ -1,56 +1,85 @@
-const blockDefaults = [
-  {
-    commonName: "African Lion",
-    latinName: "Panthera Leo",
-    imageUrl: "media/animals/african-lion.jpg"
-  },
-  {
-    commonName: "Bengal Tiger",
-    latinName: "Panthera Tigris Tigris",
-    imageUrl: "media/animals/bengal-tiger.jpg"
-  },
-  {
-    commonName: "Emperor Penguin",
-    latinName: "Aptenodytes Forsteri",
-    imageUrl: "media/animals/emperor-penguin.jpg"
-  },
-  {
-    commonName: "Bonobo",
-    latinName: "Pan Paniscus",
-    imageUrl: "media/animals/bonobo.jpg"
-  },
+import React from 'react';
+import Config from '../config.json';
 
-];
+/**
+ * This component will display 4 animal 'blocks' showing an image,
+ * common name and latin name. The 4 blocks are randomly selected, using
+ * a random number generator between 1 & 8 for the animal ID.
+ */
+export class AnimalBlocks extends React.Component{
+  constructor() {
+    super();
 
+    //empty state
+    this.state = {startingBlocks: []};
 
-//Stateless functional component
-//Used as sub component to render a zoo location block
-export const AnimalBlocks = () => (
+    //get some random animals
+    this.getAnimalData();
+  }
 
-  <div>
-    {blockDefaults.map((animal, index) =>
+  //Generates random ID values
+  randomIds(){
+    var ids = [];
 
-      <div className="col-md-3" key={index}>
-          <div className="ani-block wow fadeInUp" data-wow-delay="0.1s">
-              <a href="#">
-                  <div className="ani-block-header-img">
-                      <img className="img-responsive" src={animal.imageUrl}/>
-                  </div>
-                  <div className="ani-block-h">
-                      {animal.commonName}
-                  </div>
-                  <div className="ani-block-body">
-                      "{animal.latinName}"
-                  </div>
-              </a>
-          </div>
-      </div>
+    while(ids.length < 4){
+        //Random number between 1 & 8.
+        var n = Math.floor((Math.random() * 8) + 1);
 
-    )}
-  </div>
+        //Only push unique numbers
+        if(ids.indexOf(n) === -1)
+          ids.push(n);
+    }
+    return ids;
+  }
 
+  //Makes the http request to the API to get the animal data.
+  getAnimalData(){
+    var ids = this.randomIds();
+    var url = Config.apiAnimalBase;
 
+    //loop through ids
+    ids.map((id, index) => {
+      this.serverRequest = $.get(url + id, (result) => {
 
+        //Get blocks currently in state
+        var blocks = this.state.startingBlocks;
 
+        //Add new block object
+        blocks.push({
+          commonName: result.commonName,
+          latinName: result.scientificName,
+          imageUrl: result.imageUrl
+        })
 
-)
+        //Set the state to update view
+        this.setState({
+          startingBlocks: blocks
+        });
+      });
+    });
+  }
+
+  render(){
+    return <div>
+      {this.state.startingBlocks.map((animal, index) =>
+
+        <div className="col-md-3" key={index}>
+            <div className="ani-block wow fadeInUp" data-wow-delay="0.1s">
+                <a href="#">
+                    <div className="ani-block-header-img">
+                        <img className="img-responsive" src={animal.imageUrl}/>
+                    </div>
+                    <div className="ani-block-h">
+                        {animal.commonName}
+                    </div>
+                    <div className="ani-block-body">
+                        "{animal.latinName}"
+                    </div>
+                </a>
+            </div>
+        </div>
+
+      )}
+    </div>
+  }
+};

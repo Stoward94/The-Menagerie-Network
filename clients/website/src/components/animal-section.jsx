@@ -6,10 +6,12 @@ import { AnimalDetails } from './animal-details.jsx';
 // import css
 import './css/animal-section.css';
 
-const processSearch = function(key, value){
-    alert("hello: " + key);
-}
-
+/**
+ * This component is the root component for the animal section. It is
+ * reponsible for coordinating the rendering of the other child components.
+ * It also handles when the search box has had an item selected, hiding the
+ * default animal blocks and displaying the animal details.
+ */
 export const AnimalSection = React.createClass({
 
     getInitialState: function() {
@@ -19,10 +21,11 @@ export const AnimalSection = React.createClass({
        };
     },
 
-    handleSearch(key){
+    handleSearch(animalId){
+
       this.setState({
-        animalId: key,
-        showDefaultBlocks: key == ''
+        animalId: animalId,
+        showDefaultBlocks: animalId == ''
        })
     },
 

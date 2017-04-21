@@ -1,48 +1,57 @@
 import React from 'react';
+import Config from '../config.json';
 
+/**
+ * This component will display the details about a given animal. A prop of
+ * 'id' is passed from the parent to indicate which animal should be displayed.
+ */
 export class AnimalDetails extends React.Component {
 
     constructor(props){
       super(props);
 
+      //Configure state
       this.state = {
         isLoading: true,
+        animalId: props.id
       };
     }
 
     retrieveData(){
-      this.serverRequest = $.get('./animals.json', (result) => {
 
-        var id = this.props.id;
+      var id = this.state.animalId;
+      var url = Config.apiBase + 'animal/' + id;
 
-        function findById(element){
-          return element.Id == id;
-        };
-
-        var animal = result.find(findById);
+      //Make the GET request
+      this.serverRequest = $.get(url, (result) => {
 
         this.setState({
           isLoading: false,
           animal: {
-            commonName: animal.CommonName,
-            latinName: animal.LatinName,
-            family: animal.Family,
-            genus: animal.Genus,
-            order: animal.Order,
-            species: animal.Species,
-            origin: animal.Origin,
-            imageUrl: animal.ImageUrl,
-            description: animal.Description,
-            zoo: animal.Zoo
+            commonName: result.commonName,
+            latinName: result.scientificName,
+            family: result.family,
+            genus: result.genus,
+            order: result.order,
+            species: result.species,
+            origin: result.origin,
+            imageUrl: result.imageUrl,
+            description: result.description,
+            zoo: [] // <-- No longer providing this data via the API call
           }
         });
-
       });
     }
 
     componentWillReceiveProps(nextProps){
-      if(this.props.id != nextProps.id){
+
+      //Is the new animal id different?
+      if(this.state.animalId != nextProps.id){
+
+        //update state
         this.state.isLoading = true;
+        this.state.animalId = nextProps.id;
+
         this.retrieveData();
       }
     }
@@ -56,6 +65,7 @@ export class AnimalDetails extends React.Component {
       this.serverRequest.abort();
     }
 
+    //Basic HTML to stop the section height changing
     renderLoading(){
       return (
         <div style={{minHeight:"250px"}}>
@@ -136,9 +146,4 @@ export class AnimalDetails extends React.Component {
         </div>
       )
     };
-}
-
-
-AnimalDetails.propTypes = {
-  id: React.PropTypes.number.isRequired
 }
