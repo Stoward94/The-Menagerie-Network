@@ -1,30 +1,33 @@
 import React from 'react';
 import { ZooBlock } from './zoo-block.jsx';
+import Config from '../config.json';
 
-//temp usage of data
-import zooData from '../zoos.json'
+/**
+ * This component is responsible for rendering a summary block for each
+ * zoo in the network. A request is made fetching the data from the API,
+ * before passing the data to a child component.
+ */
+export class ZooSection extends React.Component {
 
+    constructor(){
+      super();
 
-const fetchZooData = function(){
-  //Perform ajax request to fetch JSON data
-  //[Here]
-}
+      //Configure state
+      this.state = { zoos: [] };
 
-export const ZooSection = React.createClass({
+      this.getZooData();
+    }
 
-    getInitialState : function() {
-        return {zoos: []}
-    },
+    getZooData(){
+      //Make the GET request
+      this.serverRequest = $.get(Config.apiZooBase, (result) => {
+          this.setState({ zoos: result });
+      });
+    }
 
-    componentDidMount : function() {
-        //Set the initial state by fetching the data
-        var _this = this;
-        _this.setState({zoos: zooData});
-    },
-
-    componentWillUnmount : function() {
+    componentWillUnmount() {
         this.serverRequest.abort();
-    },
+    }
 
     render() {
       return (
@@ -46,7 +49,7 @@ export const ZooSection = React.createClass({
                   <div className="container">
                       <div className="row">
 
-                          {this.state.zoos.map((zoo, index) =>                            
+                          {this.state.zoos.map((zoo, index) =>
                             <div className="col-md-4" key={index}>
                               <ZooBlock {...zoo}/>
                             </div>
@@ -57,4 +60,4 @@ export const ZooSection = React.createClass({
               </div>
             )
       }
-});
+};

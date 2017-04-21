@@ -7,12 +7,12 @@ export const ZooBlock = (props) => (
 
     <div className="loc-block wow fadeInUp" data-wow-delay="0.1s">
         <div className="loc-block-header-img">
-            <img className="img-responsive" src={props.image}/>
+            <img className="img-responsive" src={props.thumbnailUrl}/>
         </div>
 
         <div className="loc-block-body">
             <h4 className="loc-block-h">{props.name}</h4>
-            <span>{props.description}</span>
+            <span>{props.summary}</span>
         </div>
         <a href="#">
             <div className="loc-block-footer">
