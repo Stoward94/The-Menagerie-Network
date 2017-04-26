@@ -47,3 +47,14 @@ CREATE TABLE `zoo_animal` (
   CONSTRAINT `animal_id` FOREIGN KEY (`animal_id`) REFERENCES `animal` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `zoo_id` FOREIGN KEY (`zoo_id`) REFERENCES `zoo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- User table
+CREATE TABLE `user` (
+  `email` varchar(50) NOT NULL,
+  `password_hash` varchar(100) NOT NULL,
+  `password_salt` varchar(24) NOT NULL,
+  `role` varchar(24) NOT NULL,
+  PRIMARY KEY (`email`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

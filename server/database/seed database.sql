@@ -106,9 +106,13 @@ VALUES
 (8, 5, "Belle", 183, 0);
 
 
+-- ////////////////////////////////////////
 
-
-
-
-
-
+-- Seed admin user
+INSERT INTO `menagerie_network`.`user`
+(`email`, `password_hash`, `password_salt`,`role`)
+VALUES
+("email@email.com", 
+"NkWw4Voo24ASA05PMC1RJBPsmjmdIwiVAc8xbU9dbwiv6d6+kfoN70vfmTQdqcDSO72aWqZIXmWdOVUksm7Vwg==",
+"83GXr6Jnj5Bq3+5QlHFzyw==",
+"admin";
