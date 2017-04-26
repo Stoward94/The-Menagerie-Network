@@ -2,6 +2,7 @@ package menagerienetwork.webservices;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
@@ -24,6 +25,7 @@ import menagerienetwork.dataaccess.ZooAnimalRepository;
 /**
  * @author Luke Stoward
  */
+@Stateless
 @Path("animal")
 public class AnimalService {
 
