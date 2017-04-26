@@ -1,4 +1,4 @@
-package menagerienetwork.webservices;
+package menagerienetwork.filters;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;

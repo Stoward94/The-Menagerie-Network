@@ -2,7 +2,6 @@ package menagerienetwork.webservices;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
@@ -16,6 +15,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import menagerienetwork.annotations.RoleSecured;
 
 import menagerienetwork.entities.Animal;
 import menagerienetwork.dataaccess.AnimalRepository;
@@ -24,7 +24,6 @@ import menagerienetwork.dataaccess.ZooAnimalRepository;
 /**
  * @author Luke Stoward
  */
-@Stateless
 @Path("animal")
 public class AnimalService {
 
@@ -80,8 +79,9 @@ public class AnimalService {
      * @return Response object
      */
     @POST
-    @Path("/species")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/species")    
+    @Consumes(MediaType.APPLICATION_JSON)    
+    @RoleSecured("admin")
     public Response addSpecies(Animal entity) {
         
         //Basic entity checking/validation
@@ -110,7 +110,8 @@ public class AnimalService {
     
     @POST
     @Path("/zooanimal")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)    
+    @RoleSecured("admin")
     public Response addZooAnimal(NewZooAnimal entity) {
         
         //Basic entity checking/validation
