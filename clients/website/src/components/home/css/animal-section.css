@@ -23,6 +23,10 @@
 	background-color: #65b037;
 	color: #fff;
 }
+.ani-block-img{
+	width: 100%;
+	height: 196px;
+}
 
 .ani-block-body{
 	padding: 10px;

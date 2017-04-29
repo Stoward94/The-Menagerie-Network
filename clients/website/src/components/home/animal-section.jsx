@@ -31,12 +31,12 @@ export const AnimalSection = React.createClass({
 
     render(){
       return (
-          <div className = "container">
-              <div className="row">
+              <section id="animals-section" className="container">
+                <div className="row">
                   <div className="col-lg-8 col-lg-offset-2">
                       <div className="wow fadeInDown" data-wow-delay="0.1s">
                           <div className="section-heading text-center">
-                              <h2 className="h-bold">"Animalium"</h2>
+                              <h2 className="h-bold" style={{margin:0}}>"Animalium"</h2>
                               <span className="tiny-text">(Latin for Animal)</span>
                               <p>Discover our network of animals and learn the history of each unique species</p>
                           </div>
@@ -58,7 +58,7 @@ export const AnimalSection = React.createClass({
                         <AnimalDetails id={this.state.animalId}/>
                     )}
                 </div>
-          </div>
+          </section>
       )
     }
 

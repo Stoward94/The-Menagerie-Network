@@ -1,5 +1,5 @@
 import React from 'react';
-import Config from '../config.json';
+import Config from 'config.json';
 
 /**
  * This component will display the details about a given animal. A prop of

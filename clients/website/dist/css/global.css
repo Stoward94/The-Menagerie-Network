@@ -38,6 +38,10 @@ a:focus {
     text-decoration: none;
 }
 
+section{
+  padding-top: 80px;
+}
+
 .divider-short {
     background: #aaa;
     display: block;
@@ -84,7 +88,7 @@ a:hover, a:focus {
     color: #7db53b;
 }
 .bg-gray{
-  background-color: #fafafa;
+  background-color: #f3f3f3;
 }
 
 /********************
@@ -422,6 +426,7 @@ img.logo {
 .intro {
     width: 100%;
     position: relative;
+    padding-top: 0;
 }
 
 .intro-content {
@@ -531,10 +536,15 @@ p.lead-footer {
   width:100%;
 }
 
-#directions-info-panel{
+.map-container{
+  position: relative;
+}
+.map-panel{
+  visibility: hidden;
   position: absolute;
+  background-color: white;
   top: 7px;
-  right: 2%;
+  right: 7px;
   z-index: 5;
   width: 175px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
