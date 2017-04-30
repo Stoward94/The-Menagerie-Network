@@ -26,6 +26,22 @@ public class AdministrationService {
     public AdministrationService(){}
     
     @POST
+    @Path("authenticate")
+    @Consumes(MediaType.APPLICATION_JSON)    
+    public Response login(RegisterRequest model) {
+        
+        repo = new UserRepository(em);
+        boolean valid = repo.authenticateLogin(model.getEmail(), model.getPassword());
+        
+        if(valid){
+            return Response.status(Response.Status.OK).build();
+        }
+        else {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
+    }
+    
+    @POST
     @Path("register")
     @Consumes(MediaType.APPLICATION_JSON)    
     @RoleSecured("admin")

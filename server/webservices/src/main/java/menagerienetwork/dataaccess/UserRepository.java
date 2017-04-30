@@ -93,6 +93,24 @@ public class UserRepository implements ReadRepository<User>,
     public Collection<User> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public boolean authenticateLogin(String email, String password) {
+        try{
+            //Attempt to find the user by email
+            User user = getByEmail(email);
+            
+            if(user == null)
+                return false;
+            
+            //Test the provided password for the user.
+            Authenticator auth = new Authenticator();
+            return auth.testHash(password, user.getPasswordHash(), 
+                    user.getPasswordSalt());
+        }
+        catch(Exception ex){
+            return false;
+        }
+    }
     
     
     
