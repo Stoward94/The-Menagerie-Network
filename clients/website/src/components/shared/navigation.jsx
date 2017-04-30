@@ -17,10 +17,10 @@ const Navigation = () => {
 
         <div className="collapse navbar-collapse navbar-right navbar-main-collapse">
           <ul className="nav navbar-nav">
-            <li><IndexLink to="#intro" activeClassName="active">Home</IndexLink></li>
-            <li><Link to="#zoos-section" activeClassName="active">Zoos</Link></li>
-            <li><Link to="#animals-section" activeClassName="active">Animals</Link></li>
-            <li><Link to="#directions-section" activeClassName="active">Directions</Link></li>
+            <li><IndexLink to="#intro">Home</IndexLink></li>
+            <li><Link to="#zoos-section">Zoos</Link></li>
+            <li><Link to="#animals-section">Animals</Link></li>
+            <li><Link to="#directions-section">Directions</Link></li>
           </ul>
         </div>
       </div>

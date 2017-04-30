@@ -8,5 +8,5 @@ window.React = React;
 
 render(
   <Router history={browserHistory} routes={routes} />,
-  document.getElementById('page-top')
+  document.getElementById('app')
 );

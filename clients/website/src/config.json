@@ -1,6 +1,7 @@
 {
   "apiBase":"http://localhost:8080/api/",
   "apiAnimalBase":"http://localhost:8080/api/animal/",
+  "apiSpeciesBase":"http://localhost:8080/api/animal/species",
   "apiAnimalSearch":"http://localhost:8080/api/animal/search/",
   "apiZooBase":"http://localhost:8080/api/zoo/",
   "apiAuthenticate":"http://localhost:8080/api/administration/authenticate"

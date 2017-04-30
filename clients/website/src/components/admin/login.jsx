@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import Config from 'config.json';
 import './css/admin.css';
 
@@ -14,7 +15,7 @@ export default class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.authenticateUser = this.authenticateUser.bind(this);
     this.updateSessionStorage = this.updateSessionStorage.bind(this);
   }
@@ -29,11 +30,15 @@ export default class LoginForm extends React.Component {
     this.authenticateUser();
   }
 
-  handleInputChange(event) {
+  handleChange(event) {
     const value = event.target.value;
     const name = event.target.name;
 
     this.setState({[name]: value});
+
+    if(this.state.error === true){
+      this.setState({error: false});
+    }
   }
 
   /* Contacts the API, passing the username and password
@@ -41,23 +46,33 @@ export default class LoginForm extends React.Component {
    */
   authenticateUser() {
     var self = this;
-    const url = Config.apiAuthenticate;
     const data = {
       email: this.state.email,
       password: this.state.password
     };
 
+    const options = {
+      url: Config.apiAuthenticate,
+      data: JSON.stringify(data),
+      contentType:"application/json"
+    }
+
     //Contact the API
-    $.post(url, data)
+    $.post(options)
       .done(function(response) {
-        console.dir("Success " + response);
+        self.setState({error: false});
         self.updateSessionStorage();
 
-        //Notify the parent of the success
-        self.props.onSuccess();
+        //On successful authenitcation, direct the user to the
+        //intended path.
+        const location = self.props.location
+        if (location.state && location.state.nextPathname) {
+          browserHistory.push(location.state.nextPathname);
+        } else {
+          browserHistory.push('/administration');
+        }
       })
       .fail(function(response) {
-        console.dir("Fail " + response);
         self.setState({error: true});
       })
       .always(function(){
@@ -98,5 +113,5 @@ export default class LoginForm extends React.Component {
 }
 
 LoginForm.propTypes = {
-  onSuccess: React.PropTypes.func.isRequired
+  redirectUrl: React.PropTypes.string
 };

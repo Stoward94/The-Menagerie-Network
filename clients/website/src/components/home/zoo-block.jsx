@@ -14,7 +14,7 @@ export const ZooBlock = (props) => (
             <h4 className="loc-block-h">{props.name}</h4>
             <span>{props.summary}</span>
         </div>
-        <a href="#">
+        <a href={props.siteUrl} target="_blank">
             <div className="loc-block-footer">
                 <span>
                     <i className="fa fa-map-marker"></i>
