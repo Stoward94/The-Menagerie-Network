@@ -53,7 +53,10 @@ public class AnimalRepository implements ReadRepository<Animal>
 
     @Override
     public Collection<Animal> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Animal> animals = em.createNamedQuery("Animal.findAll", Animal.class)
+                .getResultList();
+        
+        return animals;
     }
 
     /**

@@ -1,6 +1,7 @@
 package menagerienetwork.dataaccess;
 
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
@@ -43,7 +44,10 @@ public class ZooAnimalRepository implements ReadRepository<ZooAnimal>
 
     @Override
     public Collection<ZooAnimal> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<ZooAnimal> zooAnimals = em.createNamedQuery("ZooAnimal.findAll", ZooAnimal.class)
+                .getResultList();
+        
+        return zooAnimals;
     }
 
     @Override

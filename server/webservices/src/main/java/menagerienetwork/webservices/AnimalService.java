@@ -21,6 +21,7 @@ import menagerienetwork.annotations.RoleSecured;
 import menagerienetwork.entities.Animal;
 import menagerienetwork.dataaccess.AnimalRepository;
 import menagerienetwork.dataaccess.ZooAnimalRepository;
+import menagerienetwork.entities.ZooAnimal;
 
 /**
  * @author Luke Stoward
@@ -36,6 +37,16 @@ public class AnimalService {
     private ZooAnimalRepository zRepo;
 
     public AnimalService(){}
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<ZooAnimal> getZooAnimals() {
+        
+        zRepo = new ZooAnimalRepository(em);
+        Collection<ZooAnimal> zooAnimals = zRepo.getAll();
+                
+        return zooAnimals;
+    }
     
     @GET
     @Path("{id}")
@@ -73,6 +84,17 @@ public class AnimalService {
         }
         
         return results;
+    }
+    
+    @GET
+    @Path("/species")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Animal> getSpecies() {
+        
+        repo = new AnimalRepository(em);
+        Collection<Animal> animals = repo.getAll();
+        
+        return animals;
     }
     
     /**
