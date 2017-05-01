@@ -65,17 +65,15 @@ export class AnimalBlocks extends React.Component{
 
         <div className="col-md-3 col-sm-4" key={index}>
             <div className="ani-block wow fadeInUp" data-wow-delay="0.1s">
-                <a href="#">
-                    <div>
-                        <img className="ani-block-img" src={animal.imageUrl}/>
-                    </div>
-                    <div className="ani-block-h">
-                        {animal.commonName}
-                    </div>
-                    <div className="ani-block-body">
-                        "{animal.latinName}"
-                    </div>
-                </a>
+                <div>
+                    <img className="ani-block-img" src={animal.imageUrl}/>
+                </div>
+                <div className="ani-block-h">
+                    {animal.commonName}
+                </div>
+                <div className="ani-block-body">
+                    "{animal.latinName}"
+                </div>                
             </div>
         </div>
 
