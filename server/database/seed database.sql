@@ -29,7 +29,7 @@ INSERT INTO `menagerie_network`.`zoo`
 VALUES
 ("Blackpool Zoo", "http://www.blackpoolzoo.org.uk", 53.816246, -3.011160, "FY3 8PP", "/media/zoos/blackpool.jpg", "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."),
 
-("Edinburgh Zoo", "http://www.edinburghzoo.org.uk", -55.942175, -3.269330, "EH12 6TS", "/media/zoos/edinburgh.jpg", "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."),
+("Edinburgh Zoo", "http://www.edinburghzoo.org.uk", 55.942358, -3.268733, "EH12 6TS", "/media/zoos/edinburgh.jpg", "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."),
 
 ("Kingston Zoo", "http://www.kingston.ac.uk", 51.403603, -0.303575, "KT1 2EE", "/media/zoos/kingston.jpg", "Ever fancied feeding a tiger or tickling a tapir's tummy? Our animal experiences are a fantastic opportunity to get up close and personal with some incredible animals, whether you're helping to feed them or talking on the role of zoo keeper for a day."),
 
