@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import ZooBox from './zoos-box.jsx';
 import SpeciesBox from './species-box.jsx';
 import ZooAnimalBox from './zoo-animal-box.jsx';

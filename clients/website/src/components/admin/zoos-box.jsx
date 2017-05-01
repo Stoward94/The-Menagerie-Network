@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import Config from 'config.json';
 
 export default class ZooBox extends React.Component {
