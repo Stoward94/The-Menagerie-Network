@@ -1,5 +1,6 @@
 package menagerienetwork.dataaccess;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -7,6 +8,8 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import javax.validation.ConstraintViolationException;
 import menagerienetwork.entities.Animal;
+import menagerienetwork.entities.ZooAnimal;
+import menagerienetwork.webservices.Species;
 
 public class AnimalRepository implements ReadRepository<Animal>
                                         ,InsertRepository<Animal>{    
@@ -15,6 +18,52 @@ public class AnimalRepository implements ReadRepository<Animal>
     
     public AnimalRepository(EntityManager em){
         this.em = em;
+    }
+    
+    public Species getAnimalDetails(int id){
+        try{
+            //Should return a list of the same animals group by the zoo id
+            List<ZooAnimal> animals = em.createNamedQuery("ZooAnimal.findByAnimalId", ZooAnimal.class)
+                    .setParameter("id", (int)id)
+                    .getResultList();
+            
+            //If we have found animals
+            if(animals.size() > 0){
+                
+                //Since each result has the same species, take the first result
+                //map the species values
+                Species animal = new Species(
+                        animals.get(0).getSpecies().getId(),
+                        animals.get(0).getSpecies().getCommonName(),
+                        animals.get(0).getSpecies().getScientificName(),
+                        animals.get(0).getSpecies().getOrder(),
+                        animals.get(0).getSpecies().getFamily(),
+                        animals.get(0).getSpecies().getGenus(),
+                        animals.get(0).getSpecies().getSpecies(),
+                        animals.get(0).getSpecies().getOrigin(),
+                        animals.get(0).getSpecies().getImageUrl(),
+                        animals.get(0).getSpecies().getDescription()                        
+                );
+                
+                List<String> zooNames = new ArrayList<>();
+                
+                //Create a list of the zoo names the animal can be found
+                for(ZooAnimal a : animals){
+                    zooNames.add(a.getZoo().getName());
+                }
+                
+                //Pass zoo names to species object                
+                animal.setZooNames(zooNames);
+                
+                return animal;                        
+            }
+            
+            return null;            
+        }
+        catch(Exception ex){
+            return null;
+        }
+        
     }
 
     @Override

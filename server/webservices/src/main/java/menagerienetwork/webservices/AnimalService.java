@@ -51,10 +51,10 @@ public class AnimalService {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Animal find(@PathParam("id") Integer id) {
+    public Species find(@PathParam("id") Integer id) {
         
         repo = new AnimalRepository(em);
-        Animal animal = repo.getById(id);
+        Species animal = repo.getAnimalDetails(id);
         
         if(animal == null)
             webExceptionHandler("Not found", 404);

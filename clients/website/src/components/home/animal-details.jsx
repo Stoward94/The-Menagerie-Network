@@ -37,7 +37,7 @@ export class AnimalDetails extends React.Component {
             origin: result.origin,
             imageUrl: result.imageUrl,
             description: result.description,
-            zoo: [] // <-- No longer providing this data via the API call
+            zoo: result.zooNames
           }
         });
       });

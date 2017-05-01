@@ -26,7 +26,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ZooAnimal.findAll", query = "SELECT z FROM ZooAnimal z")
     , @NamedQuery(name = "ZooAnimal.findById", query = "SELECT z FROM ZooAnimal z WHERE z.id = :id")
     , @NamedQuery(name = "ZooAnimal.findByPetName", query = "SELECT z FROM ZooAnimal z WHERE z.petName = :petName")
-    , @NamedQuery(name = "ZooAnimal.findByZoo", query = "SELECT z FROM ZooAnimal z WHERE z.zoo = :id")})
+    , @NamedQuery(name = "ZooAnimal.findByZoo", query = "SELECT z FROM ZooAnimal z WHERE z.zoo = :id")    
+    , @NamedQuery(name = "ZooAnimal.findByAnimalId", query = "SELECT z FROM ZooAnimal z WHERE z.species.id = :id GROUP BY z.zoo")})
 public class ZooAnimal implements Serializable {
 
     private static final long serialVersionUID = 1L;
