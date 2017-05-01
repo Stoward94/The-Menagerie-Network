@@ -1,8 +1,8 @@
-'use strict';
+import Config from 'config.json';
 
-function initMap() {
+export default function initMap() {
 
-    $.get('./zoos.json', (result) => {
+    $.get(Config.apiZooBase, (result) => {
 
       //Configure destination select list with zoos
       initDestinationSelectList(result);
@@ -25,8 +25,8 @@ function initMap() {
         var markers = result.map((zoo, i) => {
             var marker = new google.maps.Marker({
                 position: {
-                    lat: zoo.lat,
-                    lng: zoo.long
+                    lat: zoo.latitude,
+                    lng: zoo.longitude
                 },
                 title: zoo.name,
                 animation: google.maps.Animation.DROP,
@@ -37,7 +37,7 @@ function initMap() {
                 '<div id="content"><b>' + zoo.name + '</b>' +
                 '<div id="bodyContent">' +
 				'<span>Open hours: 09:30 - 17:30</span><br/>' +
-                '<a href="' + zoo.link + '">' + zoo.link + '</a> ' +
+                '<a href="' + zoo.siteUrl + '">' + zoo.siteUrl + '</a> ' +
                 '</div></div>';
 
             //Create window and add to array
